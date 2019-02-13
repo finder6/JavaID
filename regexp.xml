@@ -86,6 +86,13 @@
                 </regmatch>
             </rule>
         </function>
+		<function>
+            <rule name='XMLDecoder'>
+                <regmatch>
+                    <regexp>new\s+XMLDecoder\(</regexp>
+                </regmatch>
+            </rule>
+        </function>
     </javaid>
     <javaid vultype='SSRF'>
         <function>
