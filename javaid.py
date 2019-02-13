@@ -50,7 +50,6 @@ EXEC:
     "getRuntime.exec",
     "ProcessBuilder.start",
     "GroovyShell.evaluate"
-
  '''
 
 class javaid(object):
@@ -66,12 +65,12 @@ class javaid(object):
         try:
             self.banner()
             self.handlePath(self._dir)
-            print "[-]【JavaID】identify danger function Finished!"    
+            print "[-][JavaID] identify danger function Finished!"
         except:
             raise
 
-    def report_id(self,vul):
-        print "[+]【"+vul+"】identify danger function ["+self._function+"] in file ["+self._filename+"]"
+    def report_id(self,vul,keyword):
+        print "[+][{0}] identified by danger function [{1} -- \"{2}\"] in file [{3}]".format(vul,self._function,keyword,self._filename)
 
     def report_line(self):
         print " --> [+] on line : "+ str(self._line)
@@ -128,7 +127,7 @@ class javaid(object):
                 exp_pattern = re.compile(regexp_dom.text)
                 if exp_pattern.search(content):
                     #print "identify sfunction is : "+self._function
-                    self.report_id(self._vultype)
+                    self.report_id(self._vultype,regexp_dom.text.replace("\\",""))
                     self.function_search_line()
 
         return True
@@ -150,7 +149,7 @@ class javaid(object):
     def remove_comment(self,content):
         return content
     def banner(self):
-        print "[-]【JavaID】 Danger function identify tool"
+        print "[-][JavaID] Danger function identify tool"
 if __name__ == '__main__':
     parser = optparse.OptionParser('usage: python %prog [options](eg: python %prog -d /user/java/demo)')
     parser.add_option('-d', '--dir', dest = 'dir', type = 'string', help = 'source code file dir')
