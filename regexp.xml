@@ -42,6 +42,20 @@
                 </regmatch>
             </rule>
         </function>
+		<function>
+            <rule name='StreamingReader'>
+                <regmatch>
+                    <regexp>StreamingReader\.builder\(\)(</regexp>
+                </regmatch>
+            </rule>
+        </function>
+		<function>
+            <rule name='XSSFWorkbook'>
+                <regmatch>
+                    <regexp>new\s+XSSFWorkbook\(</regexp>
+                </regmatch>
+            </rule>
+        </function>
     </javaid>
     <javaid vultype='ObjectDeserialization'>
         <function>
