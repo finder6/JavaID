@@ -273,6 +273,345 @@
             </rule>
         </function>
     </javaid>
+
+
+    <javaid vultype='HTTP Parameter Pollution'>
+        <function>
+            <rule name='httpheader'>
+                <regmatch>
+                    <regexp>getParameter</regexp>
+                </regmatch>
+            </rule>
+        </function>
+    </javaid>
+
+    <javaid vultype='HTTP Parameter Pollution'>
+        <function>
+            <rule name='httpheader'>
+                <regmatch>
+                    <regexp>getParameterNames</regexp>
+                </regmatch>
+            </rule>
+        </function>
+    </javaid>
+
+    <javaid vultype='HTTP Parameter Pollution'>
+        <function>
+            <rule name='httpheader'>
+                <regmatch>
+                    <regexp>getParameterValues</regexp>
+                </regmatch>
+            </rule>
+        </function>
+    </javaid>
+
+    <javaid vultype='HTTP Parameter Pollution'>
+        <function>
+            <rule name='httpheader'>
+                <regmatch>
+                    <regexp>getParameterMap</regexp>
+                </regmatch>
+            </rule>
+        </function>
+    </javaid>
+
+
+    <javaid vultype='HTTP Parameter Pollution'>
+        <function>
+            <rule name='httpheader'>
+                <regmatch>
+                    <regexp>getQueryString</regexp>
+                </regmatch>
+            </rule>
+        </function>
+    </javaid>
+
+    <javaid vultype='HTTP Parameter Pollution'>
+        <function>
+            <rule name='httpheader'>
+                <regmatch>
+                    <regexp>getHeaders</regexp>
+                </regmatch>
+            </rule>
+        </function>
+    </javaid>
+
+    <javaid vultype='HTTP Parameter Pollution'>
+        <function>
+            <rule name='httpheader'>
+                <regmatch>
+                    <regexp>getHeaderNames</regexp>
+                </regmatch>
+            </rule>
+        </function>
+    </javaid>
+
+    <javaid vultype='HTTP Parameter Pollution'>
+        <function>
+            <rule name='httpheader'>
+                <regmatch>
+                    <regexp>getRequestURI</regexp>
+                </regmatch>
+            </rule>
+        </function>
+    </javaid>
+
+
+    <javaid vultype='HTTP Parameter Pollution'>
+        <function>
+            <rule name='httpheader'>
+                <regmatch>
+                    <regexp>getRequestURL</regexp>
+                </regmatch>
+            </rule>
+        </function>
+    </javaid>
+
+    <javaid vultype='HTTP Parameter Pollution'>
+        <function>
+            <rule name='httpheader'>
+                <regmatch>
+                    <regexp>getCookies</regexp>
+                </regmatch>
+            </rule>
+        </function>
+    </javaid>
+
+    <javaid vultype='HTTP Parameter Pollution'>
+        <function>
+            <rule name='httpheader'>
+                <regmatch>
+                    <regexp>getRequestedSessionId</regexp>
+                </regmatch>
+            </rule>
+        </function>
+    </javaid>
+
+    <javaid vultype='HTTP Parameter Pollution'>
+        <function>
+            <rule name='httpheader'>
+                <regmatch>
+                    <regexp>getInputStream</regexp>
+                </regmatch>
+            </rule>
+        </function>
+    </javaid>
+
+
+    <javaid vultype='HTTP Parameter Pollution'>
+        <function>
+            <rule name='httpheader'>
+                <regmatch>
+                    <regexp>getReader</regexp>
+                </regmatch>
+            </rule>
+        </function>
+    </javaid>
+
+    <javaid vultype='HTTP Parameter Pollution'>
+        <function>
+            <rule name='httpheader'>
+                <regmatch>
+                    <regexp>getMethod</regexp>
+                </regmatch>
+            </rule>
+        </function>
+    </javaid>
+
+    <javaid vultype='HTTP Parameter Pollution'>
+        <function>
+            <rule name='httpheader'>
+                <regmatch>
+                    <regexp>getProtocol</regexp>
+                </regmatch>
+            </rule>
+        </function>
+    </javaid>
+
+    <javaid vultype='HTTP Parameter Pollution'>
+        <function>
+            <rule name='httpheader'>
+                <regmatch>
+                    <regexp>getServerName</regexp>
+                </regmatch>
+            </rule>
+        </function>
+    </javaid>
+
+
+    <javaid vultype='HTTP Parameter Pollution'>
+        <function>
+            <rule name='httpheader'>
+                <regmatch>
+                    <regexp>getRemoteUser</regexp>
+                </regmatch>
+            </rule>
+        </function>
+    </javaid>
+
+    <javaid vultype='HTTP Parameter Pollution'>
+        <function>
+            <rule name='httpheader'>
+                <regmatch>
+                    <regexp>getUserPrincipal</regexp>
+                </regmatch>
+            </rule>
+        </function>
+    </javaid>
+
+    <javaid vultype='URL redirect'>
+        <function>
+            <rule name='urlredirect'>
+                <regmatch>
+                    <regexp>javax.servlet.http.HttpServletResponse.sendRedirect</regexp>
+                </regmatch>
+            </rule>
+        </function>
+    </javaid>
+
+ 
+
+    <javaid vultype='URL redirect'>
+        <function>
+            <rule name='urlredirect'>
+                <regmatch>
+                    <regexp> javax.servlet.http.HttpServletResponse.addHeader</regexp>
+                </regmatch>
+            </rule>
+        </function>
+    </javaid>
+
+    <javaid vultype='HTTP session Interaction'>
+        <function>
+            <rule name='sessioninteraction'>
+                <regmatch>
+                    <regexp>javax.servlet.http.HttpSession</regexp>
+                </regmatch>
+            </rule>
+        </function>
+    </javaid>
+
+    <javaid vultype='FileAccess'>
+        <function>
+            <rule name='MultipartFile'>
+                <regmatch>
+                    <regexp>java.io.File</regexp>
+                </regmatch>
+            </rule>
+        </function>
+    </javaid>
+
+    <javaid vultype='FileAccess'>
+        <function>
+            <rule name='MultipartFile'>
+                <regmatch>
+                    <regexp>java.io.FileInputStream</regexp>
+                </regmatch>
+            </rule>
+        </function>
+    </javaid>
+
+    <javaid vultype='FileAccess'>
+        <function>
+            <rule name='MultipartFile'>
+                <regmatch>
+                    <regexp>java.io.FileWriter</regexp>
+                </regmatch>
+            </rule>
+        </function>
+    </javaid>
+
+    <javaid vultype='FileAccess'>
+        <function>
+            <rule name='MultipartFile'>
+                <regmatch>
+                    <regexp>java.io.FileReader</regexp>
+                </regmatch>
+            </rule>
+        </function>
+    </javaid>
+
+    <javaid vultype='DatabaseAccess'>
+        <function>
+            <rule name='sqlconn'>
+                <regmatch>
+                    <regexp>java.sql.Connection.createStatement</regexp>
+                </regmatch>
+            </rule>
+        </function>
+    </javaid>
+
+    <javaid vultype='DatabaseAccess'>
+        <function>
+            <rule name='sqlconn'>
+                <regmatch>
+                    <regexp>java.sql.Statement.execute</regexp>
+                </regmatch>
+            </rule>
+        </function>
+    </javaid>
+
+    <javaid vultype='DatabaseAccess'>
+        <function>
+            <rule name='sqlconn'>
+                <regmatch>
+                    <regexp>java.sql.Statement.executeQuery</regexp>
+                </regmatch>
+            </rule>
+        </function>
+    </javaid>
+
+
+    <javaid vultype='DatabaseAccess'>
+        <function>
+            <rule name='sqlconn'>
+                <regmatch>
+                    <regexp>executeQuery\(</regexp>
+                </regmatch>
+            </rule>
+        </function>
+    </javaid>
+
+    <javaid vultype='DatabaseAccess'>
+        <function>
+            <rule name='sqlconn'>
+                <regmatch>
+                    <regexp>connection.createStatement\(\)</regexp>
+                </regmatch>
+            </rule>
+        </function>
+    </javaid>
+
+
+    <javaid vultype='DatabaseAccess'>
+        <function>
+            <rule name='sqlconn'>
+                <regmatch>
+                    <regexp>java.sql.Connection.prepareStatement</regexp>
+                </regmatch>
+            </rule>
+        </function>
+    </javaid>
+
+    <javaid vultype='DatabaseAccess'>
+        <function>
+            <rule name='sqlconn'>
+                <regmatch>
+                    <regexp>java.sql.PreparedStatement.executeQuery</regexp>
+                </regmatch>
+            </rule>
+        </function>
+    </javaid>
+    <javaid vultype='DatabaseAccess'>
+        <function>
+            <rule name='sqlconn'>
+                <regmatch>
+                    <regexp>java.sql.PreparedStatement.execute</regexp>
+                </regmatch>
+            </rule>
+        </function>
+    </javaid>
+
 	<!--
 	<javaid vultype='XXE'>
         <function>

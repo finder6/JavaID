@@ -3,11 +3,15 @@
 # java source danger function identify prog
 # Auth by Cryin'
 
+
 import re
 import os
 import optparse
 import sys
 from lxml.html import etree
+from util import Logger
+
+log = Logger('report.txt',level='info')
 
 '''
 XXE:
@@ -66,15 +70,15 @@ class javaid(object):
         try:
             self.banner()
             self.handlePath(self._dir)
-            print "[-]【JavaID】identify danger function Finished!"    
+            log.logger.info("[-][JavaID]identify danger function Finished!")    
         except:
             raise
 
     def report_id(self,vul):
-        print "[+]【"+vul+"】identify danger function ["+self._function+"] in file ["+self._filename+"]"
+        log.logger.info("[+] ["+vul+"] identify danger function ["+self._function+"] in file ["+self._filename+"]")    
 
     def report_line(self):
-        print " --> [+] on line : "+ str(self._line)
+        log.logger.info(" --> [+] on line : "+ str(self._line))    
 
     def handlePath(self, path):
         dirs = os.listdir(path) 
@@ -103,11 +107,11 @@ class javaid(object):
         fl = open(self._filename, 'r') 
         self._line =0
         importregexp="import\s[^;]*;"
-        #print "function_search_line"+self._filename
+        #log.logger.info("function_search_line"+self._filename
         while True:
             line = fl.readline() 
             if not line:  
-                #print "flclose"+str(self._line)
+                #log.logger.info("flclose"+str(self._line)
                 break
 
             self._line += 1
@@ -127,7 +131,7 @@ class javaid(object):
         for regexp_dom in regexp_doms:
                 exp_pattern = re.compile(regexp_dom.text)
                 if exp_pattern.search(content):
-                    #print "identify sfunction is : "+self._function
+                    #log.logger.info("identify sfunction is : "+self._function
                     self.report_id(self._vultype)
                     self.function_search_line()
 
@@ -139,19 +143,22 @@ class javaid(object):
         javaid_doms = self._xmlstr_dom.xpath("javaid")
         for javaid_dom in javaid_doms:
             self._vultype =javaid_dom.get("vultype")
-            #print "vul_type "+self._vultype
+            #log.logger.info("vul_type "+self._vultype
             function_doms = javaid_dom.xpath("function")
             for function_dom in function_doms:
                 rule_dom = function_dom.xpath("rule")
                 self._function =rule_dom[0].get("name")
                 self.regexp_search(rule_dom,content)
-                #print "check_regexp search ..."
+                #log.logger.info("check_regexp search ..."
         return True
     def remove_comment(self,content):
         return content
     def banner(self):
-        print "[-]【JavaID】 Danger function identify tool"
+        log.logger.info("[-][JavaID] Danger function identify tool")    
+
+
 if __name__ == '__main__':
+
     parser = optparse.OptionParser('usage: python %prog [options](eg: python %prog -d /user/java/demo)')
     parser.add_option('-d', '--dir', dest = 'dir', type = 'string', help = 'source code file dir')
 
