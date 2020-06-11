@@ -10,8 +10,11 @@ import optparse
 import sys
 from lxml.html import etree
 from util import Logger
+from datetime import datetime
 
-log = Logger('report.txt',level='info')
+now = datetime.now()
+report_file = now.strftime('report %Y%m%d-%H%M.txt')
+log = Logger( report_file,level='info')
 
 '''
 XXE:
